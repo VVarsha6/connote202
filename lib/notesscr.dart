@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'schedulescr.dart';
 import 'driverscr.dart';
+import 'Notes.dart';
 
 class NotesScreen extends StatefulWidget {
   static const id = "notes_scr";
@@ -16,59 +17,7 @@ class _NotesScreenState extends State<NotesScreen> {
         title: Text('Notes'),
       ),
       drawer: Sidenav(),
-      body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              'Take Notes',
-              style: TextStyle(color: Colors.black, fontSize: 32),
-            ),
-            Divider(
-              color: Colors.black,
-            ),
-            Divider(
-              color: Colors.black,
-            ),
-            Divider(
-              color: Colors.black,
-            ),
-            Divider(
-              color: Colors.black,
-            ),
-            Divider(
-              color: Colors.black,
-            ),
-            Divider(
-              color: Colors.black,
-            ),
-            Divider(
-              color: Colors.black,
-            ),
-            Divider(
-              color: Colors.black,
-            ),
-            Divider(
-              color: Colors.black,
-            ),
-            Divider(
-              color: Colors.black,
-            ),
-            Divider(
-              color: Colors.black,
-            ),
-            Divider(
-              color: Colors.black,
-            ),
-            Divider(
-              color: Colors.black,
-            ),
-            Divider(
-              color: Colors.black,
-            ),
-          ],
-        ),
-      ),
+      body: NotesPage(),
     );
   }
 }
