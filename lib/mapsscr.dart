@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
 
-class MapsScreen extends StatefulWidget {
+class MapsScreen extends StatelessWidget {
   static const id = "maps_scr";
   @override
-  _MapsScreenState createState() => _MapsScreenState();
-}
-
-class _MapsScreenState extends State<MapsScreen> {
-  @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+        body: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Expanded(
+          child: Container(
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage('images/image.jpg'), fit: BoxFit.cover)),
+          ),
+        ),
+      ],
+    ));
   }
 }

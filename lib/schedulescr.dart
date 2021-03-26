@@ -1,8 +1,12 @@
 import 'dart:convert';
-import 'dart:ffi';
+import 'package:connoteapp202/mapsscr.dart';
+import 'package:connoteapp202/welcomescr.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:table_calendar/table_calendar.dart';
+import 'assignmentscr.dart';
+import 'driverscr.dart';
+import 'notesscr.dart';
 
 class HomePage extends StatefulWidget {
   static const id = "scedule_scr";
@@ -55,7 +59,14 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter Calendar'),
+        title: Text('Schedule'),
+        actions: <Widget>[
+          IconButton(
+              icon: Icon(Icons.logout),
+              onPressed: () {
+                Navigator.pushNamed(context, WelcomeScreen.id);
+              })
+        ],
       ),
       drawer: Sidenav(),
       body: SingleChildScrollView(
@@ -126,12 +137,16 @@ class _HomePageState extends State<HomePage> {
                     children: <Widget>[
                       TextButton(
                         child: const Text('VIEW ASSIGNMENTS'),
-                        onPressed: () {/* ... */},
+                        onPressed: () {
+                          Navigator.pushNamed(context, AssignmentScreen.id);
+                        },
                       ),
                       const SizedBox(width: 8),
                       TextButton(
                         child: const Text('MAPS'),
-                        onPressed: () {/* ... */},
+                        onPressed: () {
+                          Navigator.pushNamed(context, MapsScreen.id);
+                        },
                       ),
                       const SizedBox(width: 8),
                     ],
@@ -155,12 +170,16 @@ class _HomePageState extends State<HomePage> {
                     children: <Widget>[
                       TextButton(
                         child: const Text('VIEW ASSIGNMENTS'),
-                        onPressed: () {/* ... */},
+                        onPressed: () {
+                          Navigator.pushNamed(context, AssignmentScreen.id);
+                        },
                       ),
                       const SizedBox(width: 8),
                       TextButton(
                         child: const Text('MAPS'),
-                        onPressed: () {/* ... */},
+                        onPressed: () {
+                          Navigator.pushNamed(context, MapsScreen.id);
+                        },
                       ),
                       const SizedBox(width: 8),
                     ],
@@ -235,25 +254,31 @@ class Sidenav extends StatelessWidget {
           Padding(
             padding: EdgeInsets.all(16.0),
             child: Text(
-              'Coneto',
+              'Connote',
               style: TextStyle(fontSize: 21, color: Colors.blue),
             ),
           ),
           Divider(color: Colors.grey.shade400),
           ListTile(
             title: Text('Schedule'),
-            leading: Icon(Icons.alarm),
-            onTap: () {},
+            leading: Icon(Icons.schedule),
+            onTap: () {
+              Navigator.pushNamed(context, HomePage.id);
+            },
           ),
           ListTile(
-            title: Text('Driver'),
-            leading: Icon(Icons.alarm),
-            onTap: () {},
+            title: Text('Driver Informer'),
+            leading: Icon(Icons.location_on),
+            onTap: () {
+              Navigator.pushNamed(context, DriverScreen.id);
+            },
           ),
           ListTile(
             title: Text('Notes'),
-            leading: Icon(Icons.alarm),
-            onTap: () {},
+            leading: Icon(Icons.note_add),
+            onTap: () {
+              Navigator.pushNamed(context, NotesScreen.id);
+            },
           ),
         ],
       ),
